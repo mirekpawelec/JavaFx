@@ -1,4 +1,4 @@
-package kurs.java.fx.controller;
+package kurs.java.fx.base.controller;
 
 import javax.sound.midi.Soundbank;
 

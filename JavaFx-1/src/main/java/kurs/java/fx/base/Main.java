@@ -1,4 +1,4 @@
-package kurs.java.fx;
+package kurs.java.fx.base;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import kurs.java.fx.controller.StackPaneController;
+import kurs.java.fx.base.controller.StackPaneController;
 
 public class Main extends Application{
 
