@@ -46,7 +46,21 @@ public class PersonViewController {
 	@FXML
 	public void initialize() {
 		nameTextField.textProperty().bindBidirectional(personView.getNameProperty());
+		nameTextField.textProperty().addListener(PersonViewController::nameListener);
+		
 		surnameTextField.textProperty().bindBidirectional(personView.getSurnameProperty());
+		surnameTextField.textProperty().addListener((observable, oldVal, newVal) -> {
+			System.out.println("surname oldValue: " + oldVal);
+			System.out.println("surname newValue: " + newVal);
+		});
+		surnameTextField.focusedProperty().addListener((observable, oldVal, newVal) -> {
+			if(newVal) {
+				System.out.println("Jesteœ w " + surnameTextField);
+			} else {
+				System.out.println("Wyszed³eœ z " + surnameTextField);
+			}
+		});
+		
 		surnameTextField.disableProperty().bind(personView.getDisableSurnameProperty());
 		
 		StringConverter conventer = new NumberStringConverter();
@@ -60,13 +74,18 @@ public class PersonViewController {
 			}
 		});
 		
-		confirmCheckBox.selectedProperty().bind(personView.getConfirmProperty());
+		confirmCheckBox.selectedProperty().bindBidirectional(personView.getConfirmProperty());
 		ageLabel.textProperty().bindBidirectional(personView.getAgeProperty());
 		
 		nameOkLabel.visibleProperty().bind(personView.getNameOkProperty());
 		surnameOkLabel.visibleProperty().bind(personView.getSurnameOkProperty());
 		
 		logginButton.disableProperty().bind(personView.getDisableButtonProperty());
+	}
+	
+	private static void nameListener(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+		System.out.println("name oldValue: " + oldValue);
+		System.out.println("name newValue: " + newValue);
 	}
 
 }
