@@ -1,7 +1,6 @@
 package kurs.java.fx.base.controller;
 
 import javax.sound.midi.Soundbank;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;

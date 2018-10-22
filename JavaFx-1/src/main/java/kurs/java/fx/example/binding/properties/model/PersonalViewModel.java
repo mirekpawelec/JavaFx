@@ -1,35 +1,46 @@
 package kurs.java.fx.example.binding.properties.model;
 
+import java.time.LocalDate;
+
+
+import javafx.beans.binding.When;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.value.ObservableValue;
 
 public class PersonalViewModel {
 
-	private StringProperty nameProperty = new SimpleStringProperty();
+	private StringProperty nameProperty = new SimpleStringProperty(); /* ok */
 	
-	private BooleanProperty nameOkProperty = new SimpleBooleanProperty();
+	private BooleanProperty nameOkProperty = new SimpleBooleanProperty(); /* ok */
 	
-	private StringProperty surnameProperty = new SimpleStringProperty();
+	private StringProperty surnameProperty = new SimpleStringProperty(); /* ok */
 	
-	private BooleanProperty disableSurnameProperty = new SimpleBooleanProperty();
+	private BooleanProperty disableSurnameProperty = new SimpleBooleanProperty(); /* ok */
 	
-	private BooleanProperty surnameOkProperty = new SimpleBooleanProperty();
+	private BooleanProperty surnameOkProperty = new SimpleBooleanProperty(); /* ok */
 	
-	private IntegerProperty yearProperty = new SimpleIntegerProperty();
+	private IntegerProperty yearProperty = new SimpleIntegerProperty(); /* ok */
 	
-	private BooleanProperty confirmProperty = new SimpleBooleanProperty();
+	private BooleanProperty confirmProperty = new SimpleBooleanProperty(); /* ok */
 	
-	private StringProperty ageProperty = new SimpleStringProperty();
+	private StringProperty ageProperty = new SimpleStringProperty(); /* ok */
 	
 	private BooleanProperty disableButtonProperty = new SimpleBooleanProperty();
 	
-	private IntegerProperty actualYearProperty = new SimpleIntegerProperty();
+	private IntegerProperty actualYearProperty = new SimpleIntegerProperty(LocalDate.now().getYear());
 
-	public PersonalViewModel() {}
+	public PersonalViewModel() {
+		nameOkProperty.bind(nameProperty.isNotEmpty());
+		surnameOkProperty.bind(surnameProperty.isNotEmpty());
+		disableSurnameProperty.bind(nameProperty.isEmpty());
+		disableButtonProperty.bind(confirmProperty.not());
+		ageProperty.bind(new When(yearProperty.isNotEqualTo(0)).then(actualYearProperty.subtract(yearProperty).asString()).otherwise(""));
+	}
 	
 	public StringProperty getNameProperty() {
 		return nameProperty;
@@ -72,10 +83,12 @@ public class PersonalViewModel {
 	}
 
 	public IntegerProperty getYearProperty() {
+		System.out.println("getYearProperty: " + this.yearProperty.get());
 		return yearProperty;
 	}
 
 	public void setYearProperty(IntegerProperty yearProperty) {
+		System.out.println("setYearProperty: " + yearProperty.get());
 		this.yearProperty = yearProperty;
 	}
 
@@ -88,10 +101,12 @@ public class PersonalViewModel {
 	}
 
 	public StringProperty getAgeProperty() {
+		System.out.println("getAgeProperty: " + ageProperty.get());
 		return ageProperty;
 	}
 
 	public void setAgeProperty(StringProperty ageProperty) {
+		System.out.println("setAgeProperty: " + ageProperty.get());
 		this.ageProperty = ageProperty;
 	}
 
