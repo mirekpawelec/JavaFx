@@ -15,7 +15,7 @@ import javafx.util.StringConverter;
 import javafx.util.converter.NumberStringConverter;
 import kurs.java.fx.example.binding.properties.model.PersonalViewModel;
 
-public class PersonViewController {
+public class PersonViewController implements Initializable {
 
 	@FXML
 	private TextField nameTextField;
@@ -43,8 +43,8 @@ public class PersonViewController {
 	
 	private PersonalViewModel personView = new PersonalViewModel();
 	
-	@FXML
-	public void initialize() {
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
 		nameTextField.textProperty().bindBidirectional(personView.getNameProperty());
 		nameTextField.textProperty().addListener(PersonViewController::nameListener);
 		
