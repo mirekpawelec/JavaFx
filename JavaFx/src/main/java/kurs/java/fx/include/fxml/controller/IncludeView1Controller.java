@@ -3,6 +3,8 @@ package kurs.java.fx.include.fxml.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,13 +19,24 @@ public class IncludeView1Controller implements Initializable {
 	@FXML
 	private Button pokazButton;
 
+	private StringProperty message = new SimpleStringProperty("Message 1");
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+		infoLabel.textProperty().bindBidirectional(message);
 	}
 	
 	@FXML
 	public void pokazInfo(ActionEvent e) {
 		System.out.println(infoLabel.getText());
 	}
+
+	public String getMessage() {
+		return message.get();
+	}
+
+	public void setMessage(String message) {
+		this.message.set(message);
+	}
+	
 }
