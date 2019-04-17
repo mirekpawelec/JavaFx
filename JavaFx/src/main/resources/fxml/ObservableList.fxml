@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="246.0" prefWidth="327.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kurs.java.fx.observablelist.controller.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="246.0" prefWidth="327.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.observablelist.controller.Controller">
    <children>
       <Button fx:id="addButton" layoutX="23.0" layoutY="188.0" mnemonicParsing="false" onAction="#addItem" text="Dodaj" />
       <Button fx:id="removeButton" layoutX="93.0" layoutY="188.0" mnemonicParsing="false" onAction="#removeItem" text="Usuń" />

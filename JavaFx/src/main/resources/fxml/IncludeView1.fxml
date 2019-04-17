@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="148.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kurs.java.fx.include.fxml.controller.IncludeView1Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="148.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.include.fxml.controller.IncludeView1Controller">
    <children>
       <Button fx:id="pokazButton" layoutX="114.0" layoutY="98.0" mnemonicParsing="false" onAction="#pokazInfo" text="Pokaz" />
       <Label fx:id="infoLabel" alignment="CENTER" contentDisplay="TOP" layoutX="44.0" layoutY="28.0" prefHeight="46.0" prefWidth="188.0" text="Widok 1" />
