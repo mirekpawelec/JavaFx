@@ -24,17 +24,17 @@ public class Main extends Application{
 		Button button = new Button("Przycisk");
 		stackPaneJavaCode.getChildren().add(button);
 
-		/* wczytanie StackPane z pliku fxml*/
+		/* wczytanie StackPane z pliku file*/
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(this.getClass().getResource("/fxml/StackPaneWindow.fxml"));
 		
-		/* ustawienie kontrolera poza plikiem fxml, nale�y to zrobi� przed wywo�aniem metody load() na loader'ze */
+		/* ustawienie kontrolera poza plikiem file, nale�y to zrobi� przed wywo�aniem metody load() na loader'ze */
 //		StackPaneController stackPaneController = new StackPaneController();
 //		loader.setController(stackPaneController);
 		
 		StackPane stackPaneFromXml = loader.load();
 		
-		/* pobranie instancji klasy kontrolera 'StackPaneController', obiekt inicjowany jest przez umieszczenie go w pliku fxml fx:controller="kurs.java.fx.controller.StackPaneController"*/
+		/* pobranie instancji klasy kontrolera 'StackPaneController', obiekt inicjowany jest przez umieszczenie go w pliku file fx:controller="kurs.java.fx.controller.StackPaneController"*/
 		StackPaneController controller = loader.getController();
 		
 		

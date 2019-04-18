@@ -20,7 +20,7 @@ public class StackPaneController {
 	void initialize() {
 		button.setText("Nowa nazwa");
 		
-		/* dodanie obs�ugi event�w w java, poza fxml */
+		/* dodanie obs�ugi event�w w java, poza file */
 		// 1. dodanie EventHandlera, w kt�rym jako typ wskazujemy rodzaj zdarzenia
 		// 2. dodanie implementacji metody handle()
 		EventHandler<ActionEvent> handler = new EventHandler<ActionEvent>() {

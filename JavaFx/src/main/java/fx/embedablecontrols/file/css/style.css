@@ -1,0 +1,29 @@
+#headerHBox {
+    -fx-background-color: blue;
+}
+
+#verticalVBox {
+    -fx-background-color: green;
+}
+
+#horizontalHBox1, #horizontalHBox2 {
+    -fx-background-color: orange;
+}
+
+#personPane {
+    -fx-min-width: 490px;
+    -fx-max-width: 490px;
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+    -fx-border-color: red;
+    -fx-border-width: 2;
+    -fx-background-color: white;
+}
+
+Label {
+    -fx-min-width: 163px;
+    -fx-max-width: 163px;
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+    -fx-alignment: center;
+}
